@@ -1,12 +1,10 @@
 import os
 import time
 import json
-
 import torch
 from torchvision import transforms
 import numpy as np
 from PIL import Image
-
 from src import deeplabv3_resnet50
 import cv2
 
@@ -101,7 +99,6 @@ def main():
 
         mask = Image.fromarray(prediction)
         mask.putpalette(pallette)
-
     result = virtual_background(original_img, mask)
     t_end_all = time_synchronized()
     print("running time: {}".format(t_end_all - t_start_all))
@@ -112,7 +109,6 @@ def main():
 
 
 if __name__ == '__main__':
-
     main()
 
 
